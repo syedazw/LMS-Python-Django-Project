@@ -88,7 +88,8 @@ border-radius: 5px;
           <td>{{book.author}}</td>
           <td>{{book.category}}</td>
           <td>
-            <a href="/deletebook?bookid={{book.id}}"><button type="button" class="btn btn-danger" >Delete</button></a>
+            <a href="/deletebook/{{book.id}}"><button type="button" class="btn btn-danger" >Delete</button></a>
+            <a href="/editbook/{{book.id}}"><button type="button" class="btn btn-outline-success my-2 my-sm-0" >Edit</button></a>
           </td>
         </tr>
       {% endfor %}

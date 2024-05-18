@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from . import forms,models
 from django.http import HttpResponseRedirect
@@ -87,6 +87,19 @@ def afterlogin_view(request):
 
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
+def search(request):
+    if request.method == 'GET':
+        query = request.GET.get('query')
+        if query:
+            books = Book.objects.filter(name_contains=query)
+            return render(request, 'viewbook.html', {'books':books})
+        else:
+            print("No Search Result")
+            return request(request, 'search.html', {})
+
+
+@login_required(login_url='adminlogin')
+@user_passes_test(is_admin)
 def addbook_view(request):
     #now it is empty book form for sending to html
     form=forms.BookForm()
@@ -101,10 +114,16 @@ def addbook_view(request):
 
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
-def deletebook(request):
-    book = Book.objects.get(id=request.POST['bookid'])
-    book.delete()
-    return HttpResponseRedirect('/')
+def deletebook(request, id):
+    dele = Book.objects.get(id=id)
+    dele.delete()
+    return redirect('/viewbook')
+
+@login_required(login_url='adminlogin')
+@user_passes_test(is_admin)
+def editbook(request, id):
+    edit = Book.objects.get(id=id)
+    return render(request, 'edit.html', {'edit': edit})
 
 
 @login_required(login_url='adminlogin')

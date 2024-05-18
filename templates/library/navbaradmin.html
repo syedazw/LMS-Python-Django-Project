@@ -34,18 +34,16 @@
 <div class="bs-example">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
         <a href="/" class="navbar-brand">LMS</a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-            <div class="navbar-nav">
-                
-
-
-            </div>
-
-            <div class="navbar-nav">
+          <div class="mx-auto order-0">
+                <form action="viewbook" method="get" class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 search-bar" type="text" name="query" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+          </div>
+            
+          <div class="navbar-nav">
               <a href="/" class="nav-item nav-link active">Home</a>
 
                 <!--for book dropdown button-->
@@ -74,16 +72,9 @@
                   </div>
                 </div>
                 <a href="logout" class="nav-item nav-link">LOGOUT</a> &nbsp
-                
             </div>
-
-
-
-
         </div>
     </nav>
 </div>
-
-
 </body>
 </html>

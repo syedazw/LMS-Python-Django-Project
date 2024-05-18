@@ -1,0 +1,104 @@
+<head>
+<style media="screen">
+table.redTable {
+border: 2px solid #607d8b;
+background-color: #EEE7DB;
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+table.redTable td, table.redTable th {
+border: 1px solid #AAAAAA;
+padding: 3px 2px;
+}
+table.redTable tbody td {
+font-size: 13px;
+}
+table.redTable tr:nth-child(even) {
+background: #ffffff;
+}
+table.redTable thead {
+background: #607d8b;
+}
+table.redTable thead th {
+font-size: 19px;
+font-weight: bold;
+color: #FFFFFF;
+text-align: center;
+border-left: 2px solid #607d8b;
+}
+table.redTable thead th:first-child {
+border-left: none;
+}
+
+table.redTable tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+background: #607d8b;
+}
+table.redTable tfoot td {
+font-size: 13px;
+}
+table.redTable tfoot .links {
+text-align: right;
+}
+table.redTable tfoot .links a{
+display: inline-block;
+background: #FFFFFF;
+color: #607d8b;
+padding: 2px 8px;
+border-radius: 5px;
+}
+</style>
+</head>
+
+{% block content%}
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <a href="/" class="navbar-brand">LMS</a>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="mx-auto order-0">
+            <!-- <form action="{% url 'seacrh' %}" method="get" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2 search-bar" type="text" name="query" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+        </div>
+        
+        <div class="navbar-nav">
+          <a href="/" class="nav-item nav-link active">Home</a>
+
+            <!--for book dropdown button-->
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Book</a>
+              <div class="dropdown-menu">
+                <a href="addbook" class="dropdown-item">Add Book</a>
+                <a href="viewbook" class="dropdown-item">View Book</a>
+              </div>
+            </div>
+
+            <!--for issuebook dropdown button-->
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Issue Book</a>
+              <div class="dropdown-menu">
+                <a href="issuebook" class="dropdown-item">Issue New Book</a>
+                <a href="viewissuedbook" class="dropdown-item">View Issued Book</a>
+              </div>
+            </div>
+
+            <!--for student dropdown button-->
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Student</a>
+              <div class="dropdown-menu">
+                <a href="viewstudent" class="dropdown-item">View Student</a>
+              </div>
+            </div>
+            <a href="logout" class="nav-item nav-link">LOGOUT</a> &nbsp
+        </div>
+    </div>
+</nav>
+
+<h2 style = 'font-size: 30px;text-align:center;'>Search Results</h2>
+
+{% endblock%}

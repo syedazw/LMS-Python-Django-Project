@@ -66,7 +66,8 @@
     <div class="container">
       <table class="table table-hover table-condensed table-striped table-bordered">
         <thead>
-        <tr>
+        <tr align="center">
+        <th>Index</th>
         <th>Student Name</th>
         <th>Enrollment</th>
         <th>Book Name</th>
@@ -74,18 +75,20 @@
         <th>Issued</th>
         <th>Expiry Date</th>
         <th>Fine</th>
+        <th>Actions</th>
         </tr>
         </thead>
         <tfoot>
         <tr>
-        <td colspan="7">
+        <td colspan="9">
         <div class="links"></div>
         </td>
         </tr>
         </tfoot>
         <tbody>
           {% for t in li %}
-            <tr>
+            <tr align="center">
+              <td >{{forloop.counter}}</td>
               <td>{{t.0}}</td>
               <td>{{t.1}}</td>
               <td>{{t.2}}</td>
@@ -93,6 +96,9 @@
               <td>{{t.4}}</td>
               <td>{{t.5}}</td>
               <td>{{t.6}}</td>
+              <td>
+                <a href=""><button type="button" class="btn btn-outline-success my-2 my-sm-0" >Return</button></a>
+              </td>
             </tr>
             {%endfor%}
         </tbody>

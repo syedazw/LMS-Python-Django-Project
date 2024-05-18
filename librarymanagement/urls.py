@@ -39,7 +39,9 @@ urlpatterns = [
     path('afterlogin', views.afterlogin_view),
 
     path('addbook', views.addbook_view),
-    path('deletebook', views.deletebook),
+    path('deletebook/<int:id>', views.deletebook),
+    path('editbook/<int:id>', views.editbook),
+    path('search', views.search),
     path('viewbook', views.viewbook_view),
     path('issuebook', views.issuebook_view),
     path('viewissuedbook', views.viewissuedbook_view),
